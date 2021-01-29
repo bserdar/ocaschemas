@@ -1,0 +1,134 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "id": "https://github.com/bserdar/ocaschemas/base",
+    "description": "OCA base metaschema",
+    "$ref": "#/definitions/BaseSchema",
+    "definitions": {
+        "BaseSchema": {
+            "type": "object",
+            "properties": {
+                "@context": {
+                    "type": "string",
+                    "format": "url"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "classification": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "issuedBy": {
+                    "type": "string"
+                },
+                "issuerRole": {
+                    "type": "string"
+                },
+                "purpose": {
+                    "type": "string"
+                },
+                "objectType": {
+                    "type": "string"
+                },
+                "attributes": {
+                    "$ref": "#/definitions/Attributes"
+                },
+                "attributeFlagging": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "objectType",
+                "attributes"
+            ]
+        },
+        "Attributes": {
+            "type": "object",
+            "additionalProperties": {
+                "$ref": "#/definitions/TypeSpec"
+            }
+        },
+        "TypeSpec": {
+            "oneOf": [
+                {
+                    "$ref": "#/definitions/PrimitiveValue"
+                },
+                {
+                    "$ref": "#/definitions/Reference"
+                },
+                {
+                    "$ref": "#/definitions/ObjectSpec"
+                },
+                {
+                    "$ref": "#/definitions/ArraySpec"
+                },
+                {
+                    "$ref": "#/definitions/AllOfSpec"
+                },
+                {
+                    "$ref": "#/definitions/OneOfSpec"
+                }
+            ]
+        },
+        "PrimitiveValue": {
+            "const": "bytes"
+        },
+        "Reference": {
+            "type": "string"
+        },
+        "ObjectSpec": {
+            "type": "object",
+            "properties": {
+                "type": {
+                    "const": "object"
+                },
+                "attributes": {
+                    "$ref": "#/definitions/Attributes"
+                }
+            },
+            "required": ["type","attributes"]
+        },
+        "ArraySpec": {
+            "type": "object",
+            "properties": {
+                "type": {
+                    "const": "object"
+                },
+                "items": {
+                    "$ref": "#/definitions/TypeSpec"
+                }
+            },
+            "required": ["type","items"]
+        },
+        "AllOfSpec": {
+            "type": "object",
+            "properties": {
+                "allOf": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/TypeSpec"
+                    }
+                }
+            },
+            "required": ["allOf"]
+        },
+        "OneOfSpec": {
+            "type": "object",
+            "properties": {
+                "oneOf": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/TypeSpec"
+                    }
+                }
+            },
+            "required": ["oneOf"]
+        }
+    }
+}
+    

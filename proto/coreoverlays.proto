@@ -1,0 +1,50 @@
+syntax = "proto3";
+
+package coreoverlays;
+
+option go_package = "coreoverlayspb";
+
+message OverlayMetadata {
+  string id                 = 2;
+  string overlayType        = 3;
+  string base               = 4;
+  string issuer             = 5;
+  string issuerRole         = 6;
+  string purpose            = 7;
+  string description        = 9;
+
+  map<string,string> labels = 10;
+}
+
+// TypeOverlay defines the types of the fields in the base overlay
+message TypeOverlay {
+  OverlayMetadata metadata =2;
+
+  // key-value pairs, attribute id to type mapping
+  map<string,string> spec = 10;
+}
+
+// FormatOverlay defines the formats of the fields in the base overlay
+message FormatOverlay {
+  OverlayMetadata metadata =2;
+
+  // key-value pairs, attribute id to format mapping
+  map<string,string> spec = 10;
+}
+
+
+// IndexOverlay defines attribute names for attribute keys in base schema
+message IndexOverlay {
+  OverlayMetadata metadata =2;
+
+  // key-value pairs, attribute id to name mapping
+  map<string,string> spec = 10;
+}
+
+// EncodingOverlay defines data encoding for the attributes
+message EncodingOverlay {
+  OverlayMetadata metadata =2;
+
+  string defaultEncoding = 3;
+  map<string,string> encodings =4;
+}

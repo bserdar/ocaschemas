@@ -1,0 +1,66 @@
+syntax = "proto3";
+
+package schema;
+
+option go_package = "schemapb";
+
+// Base defines an entity field structure and its
+// references to other entities
+message Base {
+  string id                   = 2;
+  string classification       = 3;
+  string description          = 4;
+  string issuedBy             = 5;
+  string issuerRole           = 6;
+  string purpose              = 7;
+  string objectType           = 8;
+  
+  map<string,TypeSpec> attributes   = 10;
+  
+  repeated string attributeFlagging = 11;
+
+  map<string,string> labels = 12;
+}
+
+
+// TypeSpec specifies the type of an attribute 
+message TypeSpec {
+  oneof valueType {
+    // The attribute is a simple value
+    bool            value     = 1;
+
+    // The attribute is a reference to another object
+    string          reference = 2;
+
+    // The attribute is an object, similar to a JSON object
+    Object          object    = 3;
+
+    // The attribute is an index-accesses sequence of values
+    Array           array     = 4;
+
+    // The attribute is a composition of multiple objects
+    TypeSpecList    allOf     = 5;
+
+    // The attribute is one of the possible objects
+    TypeSpecList    oneOf     = 6;
+  }
+}
+
+message TypeSpecList {
+  repeated TypeSpec types = 1;
+}
+
+
+// Object defines a key-value map similar to a JSON object
+message Object {
+  map<string,TypeSpec>  attributes = 1;
+}
+
+
+// Array defines an array containing a sequence of values
+message Array {
+  TypeSpec  items = 1;
+}
+
+
+
