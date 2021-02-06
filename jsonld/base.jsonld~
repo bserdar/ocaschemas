@@ -1,0 +1,14 @@
+{
+  "@context": {
+    "attrs": {
+      "@id":"http://attrs",
+      "@context": {
+        "key": "http://layeredschema.com/attrname",
+        "reference": "@id",
+        "items":{
+          "@id": "http://layeredschema.com/items",
+          "@type": "http://attrs"
+        }
+      }
+    }
+  },

@@ -1,0 +1,19 @@
+{
+    "@context": {
+        "classification": "http://schema.org/Text",
+        "issuedBy": "http://schema.org/Text",
+        "issuerRole": "http://schema.org/Text",
+        "purpose": "http://schema.org/Text",
+        "attributes": {
+            "@id":"https://raw.githubusercontent.com/bserdar/ocaschemas/main/jsonls/base.jsonld/#attributes",
+            "@context": {
+                "key": "https://raw.githubusercontent.com/bserdar/ocaschemas/main/jsonls/base.jsonld/#attributeKey",
+                "reference": "@id",
+                "items":{
+                    "@id": "https://raw.githubusercontent.com/bserdar/ocaschemas/main/jsonls/base.jsonld/#items",
+                    "@type": "https://raw.githubusercontent.com/bserdar/ocaschemas/main/jsonls/base.jsonld/#attributes"
+                }
+            }
+        }
+    }
+}
