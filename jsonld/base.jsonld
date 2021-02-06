@@ -1,7 +1,7 @@
 {
     "@context": {
         "classification": {
-            "@id": "https://raw.githubusercontent.com/bserdar/ocaschemas/main/jsonls/base.jsonld/classification",
+            "@id": "https://raw.githubusercontent.com/bserdar/ocaschemas/main/jsonld/base.jsonld/classification",
             "@type": "http://schema.org/Text"
         },
         "issuedBy": "http://schema.org/Text",
