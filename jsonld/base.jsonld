@@ -1,17 +1,17 @@
 {
     "@context": {
-        "classification": "https://raw.githubusercontent.com/bserdar/ocaschemas/main/jsonld/base.jsonld/classification",
-        "issuedBy": "https://raw.githubusercontent.com/bserdar/ocaschemas/main/jsonld/base.jsonld/issuedBy",
-        "issuerRole": "https://raw.githubusercontent.com/bserdar/ocaschemas/main/jsonld/base.jsonld/issuerRole",
-        "purpose": "https://raw.githubusercontent.com/bserdar/ocaschemas/main/jsonld/base.jsonld/purpose",
+        "classification": "http://baseschema/classification",
+        "issuedBy": "http://baseschema/issuedBy",
+        "issuerRole": "http://baseschema/issuerRole",
+        "purpose": "http://baseschema/purpose",
         "attributes": {
-            "@id":"https://raw.githubusercontent.com/bserdar/ocaschemas/main/jsonls/base.jsonld/#attributes",
+            "@id":"http://baseschema/attributes",
             "@context": {
-                "key": "https://raw.githubusercontent.com/bserdar/ocaschemas/main/jsonls/base.jsonld/#attributeKey",
+                "key": "http://baseschema/attributeKey",
                 "reference": "@id",
                 "items":{
-                    "@id": "https://raw.githubusercontent.com/bserdar/ocaschemas/main/jsonls/base.jsonld/#items",
-                    "@type": "https://raw.githubusercontent.com/bserdar/ocaschemas/main/jsonls/base.jsonld/#attributes"
+                    "@id": "http://baseschema/items",
+                    "@type": "http://baseschema/attributes"
                 }
             }
         }
