@@ -1,12 +1,9 @@
 {
     "@context": {
-        "classification": {
-            "@id": "https://raw.githubusercontent.com/bserdar/ocaschemas/main/jsonld/base.jsonld/classification",
-            "@type": "http://schema.org/Text"
-        },
-        "issuedBy": "http://schema.org/Text",
-        "issuerRole": "http://schema.org/Text",
-        "purpose": "http://schema.org/Text",
+        "classification": "https://raw.githubusercontent.com/bserdar/ocaschemas/main/jsonld/base.jsonld/classification",
+        "issuedBy": "https://raw.githubusercontent.com/bserdar/ocaschemas/main/jsonld/base.jsonld/issuedBy",
+        "issuerRole": "https://raw.githubusercontent.com/bserdar/ocaschemas/main/jsonld/base.jsonld/issuerRole",
+        "purpose": "https://raw.githubusercontent.com/bserdar/ocaschemas/main/jsonld/base.jsonld/purpose",
         "attributes": {
             "@id":"https://raw.githubusercontent.com/bserdar/ocaschemas/main/jsonls/base.jsonld/#attributes",
             "@context": {
