@@ -76,10 +76,22 @@
             ]
         },
         "PrimitiveValue": {
-            "const": "bytes"
+            "type": "object",
+            "properties" : {
+                "type": {
+                    "const": "bytes"
+                }
+            },
+            "required": [ "type" ]
         },
         "Reference": {
-            "type": "string"
+            "type": "object",
+            "properties": {
+                "type": {
+                    "const": "reference"
+                }
+            },
+            "required": ["type"]
         },
         "ObjectSpec": {
             "type": "object",
@@ -97,7 +109,7 @@
             "type": "object",
             "properties": {
                 "type": {
-                    "const": "object"
+                    "const": "array"
                 },
                 "items": {
                     "$ref": "#/definitions/TypeSpec"
