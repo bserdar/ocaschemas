@@ -12,6 +12,14 @@
                 "items":{
                     "@id": "http://baseschema/items",
                     "@type": "http://baseschema/attributes"
+                },
+                "allOf": {
+                    "@id": "http://baseschema/allOf",
+                    "@type": "http://baseschema/attributes"
+                },
+                "oneOf": {
+                    "@id": "http://baseschema/oneOf",
+                    "@type": "http://baseschema/attributes"
                 }
             }
         }
